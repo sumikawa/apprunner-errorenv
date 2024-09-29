@@ -10,7 +10,8 @@ get '/' do
   request_headers.each do |k, v|
     response << "#{k}: #{v}"
   end
-  response.join("\n")
+  # response.join("\n")
+  'ok'
 end
 
 get '/:error/:age/*' do

@@ -12,5 +12,5 @@ build::
 run: build
 	docker run -p 8000:3000 ${PROJECT}:latest
 
-push::
+push:: build
 	docker push ${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com/${PROJECT}:latest
