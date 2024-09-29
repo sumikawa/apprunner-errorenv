@@ -3,10 +3,14 @@ require 'sinatra'
 set :bind, '0.0.0.0'
 
 get '/' do
+  response = []
   request_headers = request.env.select { |k, v| k.start_with?('HTTP_') }
+  content_type :text
+  pp request_headers
   request_headers.each do |k, v|
-    puts "#{k}: #{v}"
+    response << "#{k}: #{v}"
   end
+  response.join("\n")
 end
 
 get '/:error/:age/*' do
