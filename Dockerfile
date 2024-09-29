@@ -1,6 +1,6 @@
-FROM ruby:2.7-alpine
+FROM ruby:3.2-alpine
 
-RUN gem install sinatra
+RUN gem install rackup sinatra
 
 COPY server.rb .
 
